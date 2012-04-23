@@ -19,6 +19,7 @@ foreach ($questions as $key => $question) {
 <html>
   <head>
     <title>Questions Test</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
 

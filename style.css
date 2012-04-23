@@ -1,0 +1,24 @@
+body {
+  font-size: 14pt;
+  margin: 128px 0 0 128px;
+  width: 600px;
+}
+
+h1 {
+  font-size: 18pt;
+}
+
+input[type=submit] {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  
+  font-size: 14pt;
+
+  float: right;
+}
+
+ol {
+  list-style: none;
+  padding-left: 0;
+}
