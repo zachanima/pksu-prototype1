@@ -12,6 +12,7 @@ require_once 'app/models/answer.php';
   <head>
     <title>Questions Test</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
   </head>
   <body>
 
