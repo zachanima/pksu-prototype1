@@ -31,7 +31,11 @@ require_once 'app/models/answer.php';
           <ol>
             <? foreach($question['answers'] as $answer): ?>
               <li>
-                <input id="answer_<?= $answer['id'] ?>" name="question_1" type="radio">
+                <input
+                  id="answer_<?= $answer['id'] ?>"
+                  name="question_1"
+                  value="<?= $answer['correct'] ?>"
+                  type="radio">
                 <label for="answer_<?= $answer['id'] ?>"><?= $answer['text'] ?></label>
               </li>
             <? endforeach ?>
