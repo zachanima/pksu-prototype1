@@ -42,6 +42,11 @@ require_once 'app/models/answer.php';
           </ol>
           <input type="submit" value="Svar">
         </form>
+
+        <? if ($question['information']): ?>
+          <a href="#" data-information="<? $question['information'] ?>">L&aelig;s mere</a>
+        <? endif ?>
+
       </div>
     <? endforeach ?>
 

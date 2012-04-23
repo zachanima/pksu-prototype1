@@ -26,3 +26,8 @@ ol {
 span.incorrect { color: red; }
 span.correct { color: green; }
 span:nth-child(3) { float: right; }
+.question a {
+  display: none;
+  margin-top: 16px;
+  text-align: right;
+}

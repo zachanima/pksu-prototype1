@@ -22,13 +22,15 @@ jQuery(function(){
     var text = answer.siblings('label').html();
 
     if (answer.attr('value') == 1) {
-      answer.parents('.question').append('<span class="correct">' + text + '</span>')
+      answer.parents('.question').children('h1').after('<span class="correct">' + text + '</span>')
     } else {
-      answer.parents('.question').append('<span class="incorrect">' + text + '</span>')
+      answer.parents('.question').children('h1').after('<span class="incorrect">' + text + '</span>')
       var correct = $(':radio[value=1]').siblings('label').html();
-      answer.parents('.question').append('<span class="correct">' + correct + '</span>')
+      answer.parents('.question').children('h1').after('<span class="correct">' + correct + '</span>')
     }
 
+    $(this).siblings('h1').css('color', '#999');
+    $(this).siblings('a').css('display', 'block');
     $(this).remove();
     return false;
   });
