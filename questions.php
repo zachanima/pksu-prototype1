@@ -13,6 +13,8 @@ require_once 'app/models/answer.php';
     <title>Questions Test</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="questions.js"></script>
+    </script>
   </head>
   <body>
 
@@ -23,20 +25,20 @@ require_once 'app/models/answer.php';
     </ul>
 
     <? foreach($questions as $question): ?>
-      <h1><?= $question['text'] ?></h1>
-
-      <form>
-        <ol>
-          <? foreach($question['answers'] as $answer): ?>
-            <li>
-              <input id="answer_<?= $answer['id'] ?>" name="question_1" type="radio">
-              <label for="answer_<?= $answer['id'] ?>"><?= $answer['text'] ?></label>
-            </li>
-          <? endforeach ?> 
-        </ol>
-
-        <input type="submit" value="Svar">
-      </form>
+      <div class="question">
+        <h1><?= $question['text'] ?></h1>
+        <form>
+          <ol>
+            <? foreach($question['answers'] as $answer): ?>
+              <li>
+                <input id="answer_<?= $answer['id'] ?>" name="question_1" type="radio">
+                <label for="answer_<?= $answer['id'] ?>"><?= $answer['text'] ?></label>
+              </li>
+            <? endforeach ?>
+          </ol>
+          <input type="submit" value="Svar">
+        </form>
+      </div>
     <? endforeach ?>
 
   </body>
