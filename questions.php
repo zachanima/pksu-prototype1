@@ -2,22 +2,9 @@
 
 $db = new PDO("mysql:host=localhost;dbname=pksu", 'root', '');
 
-$stmt = $db->prepare('select * from topics');
-$stmt->setFetchMode(PDO::FETCH_NAMED);
-$stmt->execute();
-$topics = $stmt->fetchAll();
-
-$stmt = $db->prepare('select * from questions where topic_id = ?');
-$stmt->setFetchMode(PDO::FETCH_NAMED);
-$stmt->execute(array($_GET['topic_id']));
-$questions = $stmt->fetchAll();
-
-foreach ($questions as $key => $question) {
-  $stmt = $db->prepare("select * from answers where question_id = ?");
-  $stmt->setFetchMode(PDO::FETCH_NAMED);
-  $stmt->execute(array($question['id']));
-  $questions[$key]['answers'] = $stmt->fetchAll();
-}
+require_once 'app/models/topic.php';
+require_once 'app/models/question.php';
+require_once 'app/models/answer.php';
 
 ?>
 <!DOCTYPE html>
