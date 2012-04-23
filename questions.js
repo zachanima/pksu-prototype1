@@ -1,12 +1,5 @@
 jQuery(function(){
-  var first = true;
-  $('.question').each(function() {
-    if (first == false) {
-      $(this).hide();
-    } else {
-      first = false;
-    }
-  });
+  $('.question:last-child').show();
 
   // Disable all submit buttons.
   $('input[type=submit]').attr('disabled', 'disabled');
