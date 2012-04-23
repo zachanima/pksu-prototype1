@@ -44,7 +44,8 @@ require_once 'app/models/answer.php';
         </form>
 
         <? if ($question['information']): ?>
-          <a href="#" data-information="<? $question['information'] ?>">L&aelig;s mere</a>
+          <a href="#">L&aelig;s mere</a>
+          <div class="information"><?= $question['information'] ?></div>
         <? endif ?>
 
       </div>

@@ -27,4 +27,8 @@ jQuery(function(){
     $(this).remove();
     return false;
   });
+
+  $('a').click(function() {
+    $(this).siblings('div').slideDown();
+  });
 });
