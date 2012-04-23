@@ -2,9 +2,14 @@
 
 $db = new PDO("mysql:host=localhost;dbname=pksu", 'root', '');
 
-$stmt = $db->prepare('select * from questions');
+$stmt = $db->prepare('select * from topics');
 $stmt->setFetchMode(PDO::FETCH_NAMED);
 $stmt->execute();
+$topics = $stmt->fetchAll();
+
+$stmt = $db->prepare('select * from questions where topic_id = ?');
+$stmt->setFetchMode(PDO::FETCH_NAMED);
+$stmt->execute(array($_GET['topic_id']));
 $questions = $stmt->fetchAll();
 
 foreach ($questions as $key => $question) {
@@ -22,6 +27,12 @@ foreach ($questions as $key => $question) {
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+
+    <ul id="nav">
+      <? foreach($topics as $topic): ?>
+        <li><a href="?topic_id=<?= $topic['id'] ?>"><?= $topic['title'] ?></a></li>
+      <? endforeach ?>
+    </ul>
 
     <? foreach($questions as $question): ?>
       <h1><?= $question['text'] ?></h1>
