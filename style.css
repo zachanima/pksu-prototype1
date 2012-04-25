@@ -4,9 +4,31 @@ body {
   width: 600px;
 }
 
+
+
+#nav {
+  list-style: none;
+  padding-left: 0;
+}
+
+#nav li {
+  display: inline-block;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+}
+
+#nav a {
+  text-decoration: none;
+}
+
+
+
 h1 {
   font-size: 18pt;
 }
+
+
 
 input[type=submit] {
   background-color: #fff;
@@ -18,10 +40,13 @@ input[type=submit] {
   float: right;
 }
 
+
+
 ol {
   list-style: none;
   padding-left: 0;
 }
+
 
 .question { display: none; }
 
