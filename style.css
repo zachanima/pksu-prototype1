@@ -37,9 +37,8 @@ input[type=submit] {
   
   font-size: 14pt;
 
-  float: right;
+  display: block;
 }
-
 
 
 ol {
@@ -48,7 +47,11 @@ ol {
 }
 
 
-.question { display: none; }
+.question {
+  display: none;
+  border: 1px double #fff;
+  margin-bottom: 16px;
+}
 
 span.incorrect { color: red; }
 span.correct { color: green; }

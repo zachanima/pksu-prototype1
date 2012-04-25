@@ -11,19 +11,23 @@ jQuery(function(){
 
   // Color given/correct answer according to correctness.
   $('form').submit(function() {
-    var answer = $(':radio:checked');
+    var answer = $(this).find(':radio:checked');
     var text = answer.siblings('label').html();
+    var header = answer.parents('.question').children('h1');
 
     if (answer.attr('value') == 1) {
-      answer.parents('.question').children('h1').after('<span class="correct">' + text + '</span>')
+      header.after('<span class="correct">' + text + '</span>')
     } else {
-      answer.parents('.question').children('h1').after('<span class="incorrect">' + text + '</span>')
-      var correct = $(':radio[value=1]').siblings('label').html();
-      answer.parents('.question').children('h1').after('<span class="correct">' + correct + '</span>')
+      var correct = $(this).find(':radio[value=1]').siblings('label').html();
+      header.after('<span class="correct">' + correct + '</span>')
+      header.after('<span class="incorrect">' + text + '</span>')
     }
 
     $(this).siblings('h1').css('color', '#999');
     $(this).siblings('a').css('display', 'block');
+    var next = $(this).parents('.question').prev()
+    next.delay(500);
+    next.slideDown(1000);
     $(this).remove();
     return false;
   });
