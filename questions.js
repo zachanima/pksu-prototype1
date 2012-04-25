@@ -6,7 +6,9 @@ jQuery(function(){
 
   // Enable all submit buttons when radio button is clicked.
   $(':radio').click(function() {
-    $('input[type=submit]').removeAttr('disabled');
+    var button = $(this).parents('form').find('input[type=submit]')
+    button.removeAttr('disabled');
+    button.removeAttr('title');
   });
 
   // Color given/correct answer according to correctness.
@@ -26,8 +28,7 @@ jQuery(function(){
     $(this).siblings('h1').css('color', '#999');
     $(this).siblings('a').css('display', 'block');
     var next = $(this).parents('.question').prev()
-    next.delay(500);
-    next.slideDown(1000);
+    next.slideDown(500);
     $(this).remove();
     return false;
   });

@@ -22,6 +22,10 @@ body {
   text-decoration: none;
 }
 
+#nav .active {
+  background-color: #ddd;
+}
+
 
 
 h1 {
@@ -45,6 +49,7 @@ ol {
   list-style: none;
   padding-left: 0;
 }
+
 
 
 .question {

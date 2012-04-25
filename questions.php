@@ -20,7 +20,7 @@ require_once 'app/models/answer.php';
 
     <ul id="nav">
       <? foreach($topics as $topic): ?>
-        <li><a href="?topic_id=<?= $topic['id'] ?>"><?= $topic['title'] ?></a></li>
+        <li <? if ($topic['id'] == $_GET['topic_id']) echo 'class="active"' ?>><a href="?topic_id=<?= $topic['id'] ?>"><?= $topic['title'] ?></a></li>
       <? endforeach ?>
     </ul>
 
@@ -40,7 +40,7 @@ require_once 'app/models/answer.php';
               </li>
             <? endforeach ?>
           </ol>
-          <input type="submit" value="Svar">
+          <input type="submit" value="Svar" title="V&aelig;lg svar f&oslash;rst">
         </form>
 
         <? if ($question['information']): ?>
